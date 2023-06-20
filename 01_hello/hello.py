@@ -1,39 +1,52 @@
 #!/usr/bin/env python3
 
 """
-Author : Ken Youens-Clark <kyclark@gmail.com>
-Purpose: Python program to write a Python program
+Tiny Python Projects
+by Ken Youens-Clark
+
+CHAPTER 1: How to write and test a Python program
+PROGRAM: Hello World!
+PURPOSE: Say hello
+
+AUTHOR: Steven Partlow <profsfrink@gmail.com>
+DATE STARTED: 19/06/2023
+DATE FINISHED: 23/06/2023
 """
 
-import argparse
+import argparse  # Import the argparse module in to the program
 
 
-# --------------------------------------------------
-def get_args():
-    """Get command-line arguments"""
+def get_args():  # Defin get_args() method
+    """Get the command-line arguments"""
 
-    parser = argparse.ArgumentParser(
-        description='Say hello',
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parseer = argparse.ArgumentParser(
+        description="Say hello"
+    )  # Setup our program to accept arguments,
+    # the description is our help message
 
-    parser.add_argument('-n',
-                        '--name',
-                        help='Name to greet',
-                        metavar='name',
-                        type=str,
-                        default='World')
-
-    return parser.parse_args()
-
-
-# --------------------------------------------------
-def main():
-    """Make a jazz noise here"""
-
-    args = get_args()
-    print('Hello, ' + args.name + '!')
+    # Make the first argument optional using either -n or --name
+    # If no argument is provided the name will default to 'World'
+    # # metavar=name is the name of the optional argument that will
+    # appear in the usage message
+    parseer.add_argument('-n',
+                         '--name',
+                         metavar='name',
+                         default='World',
+                         help='Name to greet')
+    return parseer.parse_args()  # Return any parsed arguements
 
 
-# --------------------------------------------------
-if __name__ == '__main__':
+def main():  # Define main() function
+    """ Main program code """
+
+    args = get_args(
+    )  # Execute get_args() method then store return values in args
+
+    print(
+        "Hello, " + args.name + "!"
+    )  # Concatentate the name argument to this string
+    # and output to the console
+
+
+if __name__ == "__main__":
     main()
