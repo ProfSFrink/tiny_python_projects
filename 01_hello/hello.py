@@ -14,14 +14,15 @@ DATE FINISHED: 23/06/2023
 """
 
 import argparse  # Import the argparse module in to the program
+from argparse import ArgumentParser
 
 
-def get_args():  # Defin get_args() method
+def get_args():  # Define get_args() method
     """Get the command-line arguments"""
 
     parseer = argparse.ArgumentParser(
         description="Say hello"
-    )  # Setup our program to accept arguments,
+    )  # Set up our program to accept arguments,
     # the description is our help message
 
     # Make the first argument optional using either -n or --name
@@ -33,7 +34,7 @@ def get_args():  # Defin get_args() method
                          metavar='name',
                          default='World',
                          help='Name to greet')
-    return parseer.parse_args()  # Return any parsed arguements
+    return parseer.parse_args()  # Return any parsed arguments
 
 
 def main():  # Define main() function
@@ -44,7 +45,7 @@ def main():  # Define main() function
 
     print(
         "Hello, " + args.name + "!"
-    )  # Concatentate the name argument to this string
+    )  # Concatenate the name argument to this string
     # and output to the console
 
 

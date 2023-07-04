@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\01_hello"
   ],
+  "SelectedNode": "\\01_hello\\hello.py",
   "PreviewInSolutionExplorer": false
 }
