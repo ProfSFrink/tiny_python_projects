@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Author : Me <me@foo.com>
+Author : Steven Partlow <profsfrink@gmail.com>
 Date   : today
 Purpose: Rock the Casbah
 """
